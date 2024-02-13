@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        function eliminarParrafo(){
+            let parrafo = document.getElementById('Mensaje');
+            parrafo.remove();
+            document.write('<h1>Nuevo mensaje</h1>')
+        }        
+    </script>
+</head>
+<body>
+    <button onclick="eliminarParrafo()">Alerta</button>
+    <p id="Mensaje">Esto en un parrafo que se mostrara con java script</p>
+</body>
+</html>
