@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="date" id="calendar">
+    <input type="button" id="boton" value="calcular" onclick="calendarCalc()">
+    <p id="texto"></p>
+    <script type="text/javascript">
+        function calendarCalc(){
+            let fecha = new Date();
+            var fecha2 = new Date(document.getElementById("calendar").value);
+            var dias = Math.abs(fecha - fecha2)/(1000*60*60*24);     
+            document.getElementById("texto").innerHTML = dias;
+        }
+    </script>
+</body>
+</html>

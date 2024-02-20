@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function cambiarContenido() {
+          var parrafo = document.getElementById("miParrafo");
+          parrafo.textContent = "Este es el nuevo contenido del párrafo.";
+          parrafo.style.color = "blue";
+        }
+    </script>
+</head>
+<body>
+    <p id="miParrafo">Este es el contenido original del párrafo.</p>
+    <button onclick="cambiarContenido()">Pulsa aquí para cambiar el contenido del párrafo</button>
+</body>
+</html>

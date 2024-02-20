@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>   
+        function cambiarEnlace(){
+            var enlace = document.getElementById("miEnlace").getElementsByTagName('a')[0];
+            enlace.href = "https://twitter.com/?lang=es";
+            enlace.innerHTML = "Nuevo enlace";
+        }   
+    </script>
+</head>
+<body>
+    <p id="miEnlace"><a href="https://www.youtube.com/">Enlace original</a></p>
+    <button onclick="cambiarEnlace()">Cambiar enlace</button>
+</body>
+</html>

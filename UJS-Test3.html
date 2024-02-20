@@ -7,19 +7,55 @@
 </head>
 <body>
     <form>
-        <div>   
-            <input type="number" placeholder="numero1">
-            <input type="number" placeholder="numero2">
-        </div>
+        <input type="number" id="numero1" placeholder="Numero 1">
+        <input type="number" id="numero2" placeholder="Numero 2">
         <div>
-            <input type="button" value="sumar">
-            <input type="button" value="restar">
-            <input type="button" value="multiplicar">
-            <input type="button" value="dividir">
+            <input type="button" value="Sumar" onclick="operaciones('sumar')">
+            <input type="button" value="Restar" onclick="operaciones('restar')">
+            <input type="button" value="Multiplicar" onclick="operaciones('multiplicar')">
+            <input type="button" value="Dividir" onclick="operaciones('dividir')">
         </div>
     </form>  
+    <p id="mensaje"></p>
     <script>
+        function operaciones(operacion) {
+            var num1 = document.getElementById("numero1").value;
+            var num2 = document.getElementById("numero2").value;
+            var mensajeElement = document.getElementById("mensaje");
 
+            if (num1 === "" || num2 === "") {
+                mensajeElement.style.color = "red";
+                mensajeElement.textContent = "Por favor, ingresa ambos números.";
+            } else {
+                num1 = parseFloat(num1);
+                num2 = parseFloat(num2);
+                var resultado;
+
+                switch (operacion) {
+                    case 'sumar':
+                        resultado = num1 + num2;
+                        break;
+                    case 'restar':
+                        resultado = num1 - num2;
+                        break;
+                    case 'multiplicar':
+                        resultado = num1 * num2;
+                        break;
+                    case 'dividir':
+                        if (num2 === 0) {
+                            mensajeElement.style.color = "red";
+                            mensajeElement.textContent = "No se puede dividir por cero.";
+                            return;
+                        } else {
+                            resultado = num1 / num2;
+                        }
+                        break;
+                }
+
+                mensajeElement.style.color = "green";
+                mensajeElement.textContent = "El resultado es: " + resultado;
+            }
+        }
     </script>  
 </body>
 </html>
